@@ -59,6 +59,7 @@ export const LandingPage = () => {
       <SimpleGrid
         columns={[2, 2, 4]}
         mt="3rem"
+        mb="2rem"
         px={4}
         gridGap={["2rem", "2rem", "2rem"]}
       >
@@ -68,8 +69,6 @@ export const LandingPage = () => {
           )
         )}
       </SimpleGrid>
-
-      <Heading {...headerStyle}>Popular Quizzes</Heading>
     </>
   );
 };
