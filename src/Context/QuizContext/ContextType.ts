@@ -1,7 +1,7 @@
-import { QuizCategory } from "./QuizType";
+import { QuizCategoryType } from "./QuizType";
 
 export type InitialStateType = {
-  categories: QuizCategory[];
+  categories: QuizCategoryType[];
 };
 
 export type ContextType = {
@@ -11,5 +11,5 @@ export type ContextType = {
 
 export type QuizAction = {
   type: "SET_CATEGORIES";
-  payload: QuizCategory[];
+  payload: QuizCategoryType[];
 };

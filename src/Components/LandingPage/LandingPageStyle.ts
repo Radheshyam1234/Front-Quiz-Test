@@ -20,3 +20,22 @@ export const categoryCardWrapperStyle = {
   boxShadow:
     "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;",
 };
+
+export const quizCardWrapperStyle = {
+  ...categoryCardWrapperStyle,
+};
+export const imageStyle = {
+  width: "100%",
+  height: "10rem",
+};
+export const quizCardTitleStyle = {
+  mt: "1rem",
+  mb: "1rem",
+  fontSize: "1.25rem",
+};
+
+export const tagStyle = {
+  bg: "secondary.900",
+  color: "white",
+  fontWeight: "500",
+};
