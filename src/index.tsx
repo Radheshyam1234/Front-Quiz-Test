@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { QuizDataProvider } from "./Context/QuizContext/QuizDataProvider";
+import { AuthProvider } from "./Context/AuthenticationContext/AuthProvider";
 import App from "./App";
 
 import { colors, fonts, components } from "./themeData";
@@ -20,9 +21,11 @@ root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Router>
-        <QuizDataProvider>
-          <App />
-        </QuizDataProvider>
+        <AuthProvider>
+          <QuizDataProvider>
+            <App />
+          </QuizDataProvider>
+        </AuthProvider>
       </Router>
     </ChakraProvider>
   </React.StrictMode>
