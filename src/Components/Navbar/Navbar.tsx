@@ -42,7 +42,9 @@ export const Navbar = () => {
               aria-label={"Toggle Navigation"}
             />
           </Flex>
-          <Text {...navLogoStyle}>Front-Quiz</Text>
+          <Link to="/">
+            <Text {...navLogoStyle}>Front-Quiz</Text>
+          </Link>
           <Flex justify={{ base: "center", md: "start" }}>
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
               <DesktopNav />

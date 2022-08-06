@@ -3,7 +3,7 @@ import { Image } from "@chakra-ui/image";
 import { headerStyle } from "./LandingPageStyle";
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { useQuizData } from "../../Context/QuizContext/QuizDataProvider";
-import { QuizCategory } from "../../Context/QuizContext/QuizType";
+import { QuizCategoryType } from "../../Context/QuizContext/QuizType";
 
 export const LandingPage = () => {
   const { quizState } = useQuizData();
@@ -45,7 +45,7 @@ export const LandingPage = () => {
         gridGap={["2rem", "2rem", "2rem"]}
       >
         {quizState?.categories?.map(
-          (category: QuizCategory): JSX.Element => (
+          (category: QuizCategoryType): JSX.Element => (
             <CategoryCard category={category} key={category._id} />
           )
         )}
