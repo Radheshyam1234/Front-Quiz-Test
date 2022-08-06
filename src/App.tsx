@@ -32,7 +32,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+
         <Route path="/category/:categoryId" element={<SingleCategoryPage />} />
+
+  
       </Routes>
     </div>
   );

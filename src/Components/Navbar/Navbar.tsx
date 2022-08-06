@@ -51,7 +51,7 @@ export const Navbar = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Link to="/login">
+        <Link to="/profile">
           <Box as="span" {...avatarWrapperStyle}>
             <Avatar
               as="span"
