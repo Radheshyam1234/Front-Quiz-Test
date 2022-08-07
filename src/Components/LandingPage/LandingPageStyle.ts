@@ -23,6 +23,7 @@ export const categoryCardWrapperStyle = {
 
 export const quizCardWrapperStyle = {
   ...categoryCardWrapperStyle,
+  cursor: "arrow",
 };
 export const imageStyle = {
   width: "100%",
