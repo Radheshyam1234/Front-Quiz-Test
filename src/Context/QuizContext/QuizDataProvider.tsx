@@ -12,6 +12,7 @@ interface Props {
 export const QuizDataProvider: React.FC<Props> = ({ children }) => {
   const initialState: InitialStateType = {
     categories: [],
+    currentQuestionNumber: 1,
   };
 
   const [quizState, quizDispatch] = useReducer(quizDataReducer, initialState);

@@ -17,3 +17,27 @@ export type QuizCategoryTypeWithQuizDetails = {
   name: string;
   quizzes: QuizCardType[];
 };
+
+export type OptionType = {
+  _id: string;
+  text: string;
+  isCorrect: boolean;
+};
+
+export type QuestionType = {
+  _id: string;
+  question: string;
+  image: string;
+  points: number;
+  negativePoints: Number;
+  options: OptionType[];
+};
+
+export type QuizType = {
+  _id: string;
+  category: string;
+  name: string;
+  image: string;
+  questions: QuestionType[];
+  highScore: [];
+};

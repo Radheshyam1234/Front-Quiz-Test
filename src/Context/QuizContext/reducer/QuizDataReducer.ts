@@ -10,6 +10,16 @@ export const quizDataReducer = (
         ...quizState,
         categories: action.payload,
       };
+    case "INCREASE_QUESTION_NUMBER":
+      return {
+        ...quizState,
+        currentQuestionNumber: quizState.currentQuestionNumber + 1,
+      };
+    case "DECREASE_QUESTION_NUMBER":
+      return {
+        ...quizState,
+        currentQuestionNumber: quizState.currentQuestionNumber - 1,
+      };
     default:
       throw new Error("NO Such action action");
   }

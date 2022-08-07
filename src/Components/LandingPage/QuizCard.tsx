@@ -10,22 +10,22 @@ import {
 export const QuizCard = ({ quiz }: { quiz: QuizCardType }) => {
   return (
     <>
-      <Link to={`/quiz/${quiz._id}`}>
-        <Box {...quizCardWrapperStyle}>
-          <Image src={quiz.image} alt={quiz.name} {...imageStyle} />
+      <Box {...quizCardWrapperStyle}>
+        <Image src={quiz.image} alt={quiz.name} {...imageStyle} />
+        <Box>
+          <Box {...quizCardTitleStyle}>{quiz.name}</Box>
           <Box>
-            <Box {...quizCardTitleStyle}>{quiz.name}</Box>
-            <Box>
-              <Tag {...tagStyle}>
-                <TagLabel>{quiz.category}</TagLabel>
-              </Tag>
-            </Box>
+            <Tag {...tagStyle}>
+              <TagLabel>{quiz.category}</TagLabel>
+            </Tag>
           </Box>
+        </Box>
+        <Link to={`/quiz/${quiz._id}`}>
           <Box>
             <Button variant="solidPrimary">Start Now</Button>
           </Box>
-        </Box>
-      </Link>
+        </Link>
+      </Box>
     </>
   );
 };
