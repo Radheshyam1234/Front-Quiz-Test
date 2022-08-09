@@ -22,6 +22,7 @@ export type OptionType = {
   _id: string;
   text: string;
   isCorrect: boolean;
+  isChosen?: boolean;
 };
 
 export type QuestionType = {
@@ -29,7 +30,7 @@ export type QuestionType = {
   question: string;
   image: string;
   points: number;
-  negativePoints: Number;
+  negativePoints: number;
   options: OptionType[];
 };
 
@@ -39,5 +40,6 @@ export type QuizType = {
   name: string;
   image: string;
   questions: QuestionType[];
+  score?: number;
   highScore: [];
 };

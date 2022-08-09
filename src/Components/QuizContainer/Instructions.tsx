@@ -33,6 +33,11 @@ export const Instructions = ({ quiz, setShowQuiz }: InstructionType) => {
             Each Question will have four options out of which only one is
             correct.
           </ListItem>
+          <ListItem>Each question is mandatory to be answered.</ListItem>
+          <ListItem>
+            Once you moved to next question , there will be no option to move
+            previous question.
+          </ListItem>
           <ListItem>Score at least 60% to win the quiz.</ListItem>
         </UnorderedList>
         <Button
