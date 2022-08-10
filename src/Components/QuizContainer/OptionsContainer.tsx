@@ -40,7 +40,7 @@ export const OptionsContainer = ({ question }: { question: QuestionType }) => {
   return (
     <>
       <SimpleGrid columns={[2, 2, 2]} gap="1rem" mt="1.75rem">
-        {question.options.map((option: OptionType): JSX.Element => {
+        {question?.options.map((option: OptionType): JSX.Element => {
           const radio = getRadioProps({
             value: option._id,
           });
