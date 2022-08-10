@@ -9,9 +9,14 @@ export const QuestionContainer = ({
   setShowResult,
 }: QuestionContainerType) => {
   const {
-    quizState: { currentQuestionNumber },
+    quizState: { currentQuestionNumber, quizTaken },
     quizDispatch,
   } = useQuizData();
+
+  const submitQuiz = () => {
+    quizDispatch({ type: "CALCULATE_SCORE" });
+    setShowResult(true);
+  };
 
   return (
     <>
@@ -25,28 +30,30 @@ export const QuestionContainer = ({
             {question.question}
           </Heading>
           <OptionsContainer question={question} />
-          <Button
-            mt="4"
-            leftIcon={<ArrowBackIcon />}
-            variant="solidPrimary"
-            disabled={currentQuestionNumber === 1}
-            onClick={() => {
-              quizDispatch({ type: "DECREASE_QUESTION_NUMBER" });
-            }}
-            mr={12}
-          >
-            Prev
-          </Button>
-          <Button
-            mt="4"
-            rightIcon={<ArrowForwardIcon />}
-            variant="solidPrimary"
-            onClick={() => {
-              quizDispatch({ type: "INCREASE_QUESTION_NUMBER" });
-            }}
-          >
-            {currentQuestionNumber === 5 ? "Submit" : "Next"}
-          </Button>
+
+          {currentQuestionNumber !== quizTaken?.questions.length ? (
+            <Button
+              mt="4"
+              rightIcon={<ArrowForwardIcon />}
+              variant="solidPrimary"
+              onClick={() => {
+                quizDispatch({ type: "INCREASE_QUESTION_NUMBER" });
+              }}
+            >
+              Next
+            </Button>
+          ) : (
+            <Button
+              mt="4"
+              rightIcon={<ArrowForwardIcon />}
+              variant="solidPrimary"
+              onClick={() => {
+                submitQuiz();
+              }}
+            >
+              Submit
+            </Button>
+          )}
         </Box>
       </SimpleGrid>
     </>

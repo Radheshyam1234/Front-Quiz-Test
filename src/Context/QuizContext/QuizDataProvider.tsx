@@ -12,6 +12,7 @@ interface Props {
 export const QuizDataProvider: React.FC<Props> = ({ children }) => {
   const initialState: InitialStateType = {
     categories: [],
+    quizTaken: null,
     currentQuestionNumber: 1,
   };
 

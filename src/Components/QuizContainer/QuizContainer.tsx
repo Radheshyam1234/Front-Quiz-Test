@@ -6,12 +6,14 @@ import { QuizType } from "../../Context/QuizContext/QuizType";
 import { Instructions } from "./Instructions";
 import { QuestionContainer } from "./QuestionContainer";
 import { useQuizData } from "../../Context/QuizContext/QuizDataProvider";
+import { QuizResultContainer } from "../QuizResultContainer/QuizResultContainer";
 
 export const QuizContainer = () => {
   const { quizId } = useParams();
   const [quiz, setQuiz] = useState<null | QuizType>(null);
   const {
     quizState: { currentQuestionNumber },
+    quizDispatch,
   } = useQuizData();
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
@@ -27,10 +29,15 @@ export const QuizContainer = () => {
           url: `${API_URL}/quizzes/${quizId}`,
         });
         setQuiz(response);
+        quizDispatch({ type: "SET_QUIZ_TAKE", payload: response });
       } catch (error) {
         console.log(error);
       }
     })();
+
+    return () => {
+      quizDispatch({ type: "RESET" });
+    };
   }, [quizId]);
 
   return (
@@ -50,6 +57,8 @@ export const QuizContainer = () => {
           )}
         </>
       )}
+
+      {showResult && <QuizResultContainer />}
     </>
   );
 };

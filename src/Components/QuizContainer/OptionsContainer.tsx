@@ -1,6 +1,7 @@
 import { OptionType, QuestionType } from "../../Context/QuizContext/QuizType";
 import { Box, SimpleGrid, useRadio, useRadioGroup } from "@chakra-ui/react";
 import { radioCardStyle } from "./QuizStyle";
+import { useQuizData } from "../../Context/QuizContext/QuizDataProvider";
 
 function RadioCard(props: any) {
   const { getInputProps, getCheckboxProps } = useRadio(props.radio);
@@ -19,9 +20,21 @@ function RadioCard(props: any) {
 }
 
 export const OptionsContainer = ({ question }: { question: QuestionType }) => {
+  const { quizDispatch } = useQuizData();
+
+  const updateAnswer = (optionId: string): void => {
+    quizDispatch({
+      type: "CHOOSE_OPTION",
+      payload: {
+        questionId: question._id,
+        optionId: optionId,
+      },
+    });
+  };
+
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "framework",
-    //onChange: updateAnswer,
+    onChange: updateAnswer,
   });
   const group = getRootProps();
   return (
