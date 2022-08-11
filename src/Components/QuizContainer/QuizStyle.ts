@@ -30,3 +30,20 @@ export const radioCardStyle = {
     fontWeight: "bold",
   },
 };
+
+export const timerBoxStyle = {
+  mt: "5",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  color: "green.500",
+  fontWeight: "500",
+  fontSize: "1.25rem",
+};
+
+export const actionButtonContainerStyle = {
+  mt: "8",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+};

@@ -39,6 +39,12 @@ export const Instructions = ({ quiz, setShowQuiz }: InstructionType) => {
             previous question.
           </ListItem>
           <ListItem>Score at least 60% to win the quiz.</ListItem>
+          <ListItem>
+            <b>
+              Don't refresh the page while giving quiz, give quiz in one take.
+              Otherwise your progress will be reset.
+            </b>
+          </ListItem>
         </UnorderedList>
         <Button
           mt="4"
