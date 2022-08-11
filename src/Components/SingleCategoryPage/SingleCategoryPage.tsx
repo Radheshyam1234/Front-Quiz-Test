@@ -8,6 +8,7 @@ import {
 } from "../../Context/QuizContext/QuizType";
 import axios from "axios";
 import { API_URL } from "../../utilities/constants";
+import { Loader } from "../Loader/Loader";
 
 export const SingleCategoryPage = () => {
   const { categoryId } = useParams();
@@ -32,7 +33,7 @@ export const SingleCategoryPage = () => {
 
   return (
     <>
-      {categoryDetails && (
+      {categoryDetails ? (
         <>
           <Heading textAlign="center" p="8">
             {categoryDetails.name} Quizzes
@@ -47,6 +48,8 @@ export const SingleCategoryPage = () => {
             "Coming Soon"
           )}
         </>
+      ) : (
+        <Loader size="md" />
       )}
     </>
   );

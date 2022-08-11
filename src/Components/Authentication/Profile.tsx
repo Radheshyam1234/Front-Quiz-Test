@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Avatar, Button, Box, Heading, SimpleGrid } from "@chakra-ui/react";
 
 import { useAuthProvider } from "../../Context/AuthenticationContext/AuthProvider";
+import { Loader } from "../Loader/Loader";
 
 export const Profile = () => {
   const { getUserProfile, token, logoutUser, userDetails } = useAuthProvider();
@@ -27,7 +28,7 @@ export const Profile = () => {
       <Heading textAlign="center" mb="2.5rem">
         Your Profile
       </Heading>
-      {loading && "Loading"}
+      {loading && <Loader size="md" />}
       {userDetails && (
         <SimpleGrid margin="0 auto 2rem" justifyContent="center" gap="2rem">
           <Box textAlign="right">

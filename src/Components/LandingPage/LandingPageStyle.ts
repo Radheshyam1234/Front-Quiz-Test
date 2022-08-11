@@ -1,5 +1,5 @@
 export const headerStyle: any = {
-  as: "span",
+  textAlign: "center",
   padding: "1rem",
   color: "secondary.900",
   fontWeight: "bold",
