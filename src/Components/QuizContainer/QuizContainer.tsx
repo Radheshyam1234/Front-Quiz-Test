@@ -7,6 +7,7 @@ import { Instructions } from "./Instructions";
 import { QuestionContainer } from "./QuestionContainer";
 import { useQuizData } from "../../Context/QuizContext/QuizDataProvider";
 import { QuizResultContainer } from "../QuizResultContainer/QuizResultContainer";
+import { Loader } from "../Loader/Loader";
 
 export const QuizContainer = () => {
   const { quizId } = useParams();
@@ -42,7 +43,7 @@ export const QuizContainer = () => {
 
   return (
     <>
-      {!quiz && "Loading Quiz"}
+      {!quiz && <Loader size="md" />}
       {quiz && !showResult && (
         <>
           {!showQuiz ? (
